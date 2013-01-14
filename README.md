@@ -6,9 +6,9 @@ $("input").inputClear();
 
 To exclude certain input elements from having clear option:
 
-<code>
+<pre>
 <input type="text" class="no-clear" />
-</code>
+</pre>
 
 or if you can't touch your existing code just add exclude option:
 
