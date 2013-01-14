@@ -16,6 +16,10 @@ To exclude certain input elements from having clear option:
 
 or if you can't touch your existing code just add exclude option:
 
+```html
+<input type="text" class="myclass" />
+```
+
 ```javascript
 var options= {'exclude':'.myclass' };
 $("input").inputClear(options);
