@@ -1,20 +1,22 @@
-<h2>Usage:</h2>
+# jQuery Clear Text plugin
 
-<code>
+## Usage:
+
+```javascript
 $("input").inputClear();
-</code>
+```
 
 To exclude certain input elements from having clear option:
 
-<pre>
+```html
 <input type="text" class="no-clear" />
-</pre>
+```
 
 or if you can't touch your existing code just add exclude option:
 
-<code>
+```javascript
 var options= {'exclude':'myclass' }
 $("input").inputClear(options);
-</code>
+```
 
 Live example on JsFiddle:  http://jsfiddle.net/ELGga/embedded/result/
