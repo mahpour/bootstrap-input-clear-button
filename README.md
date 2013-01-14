@@ -1,3 +1,20 @@
-Live example on JsFiddle:  http://jsfiddle.net/ELGga/
+<h2>Usage:</h2>
 
-<iframe style="width: 100%; height: 600px" src="http://jsfiddle.net/ELGga/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<code>
+$("input").inputClear();
+</code>
+
+To exclude certain input elements from having clear option:
+
+<code>
+<input type="text" class="no-clear" />
+</code>
+
+or if you can't touch your existing code just add exclude option:
+
+<code>
+var options= {'exclude':'myclass' }
+$("input").inputClear(options);
+</code>
+
+Live example on JsFiddle:  http://jsfiddle.net/ELGga/embedded/result/
