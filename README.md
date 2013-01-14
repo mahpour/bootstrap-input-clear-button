@@ -1,5 +1,7 @@
 # jQuery Clear Text plugin
 
+Adds an iOS style clear button to the input fields using bootstrap icons. clear icon appears upon focus and will disappear on blur events.
+
 ## Usage:
 
 ```javascript
