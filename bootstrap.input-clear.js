@@ -26,7 +26,8 @@ THE SOFTWARE.
 (function ($) {
     "use strict";
     function enableInputClearOption() {
-        $("input[type=text]").unbind("focus").focus(function () {
+	// add private event handler to avoid conflict
+        $("input[type=text]").not(".no-clear").unbind("clear-focus").bind("clear-focus", (function () {
             if ($(this).data("clear-button")) return;
             var x = $("<a class='clear-text' style='cursor:pointer;color:#888;'><i class='icon-remove'></i></a>");
             $(x).data("text-box", this);
@@ -34,8 +35,8 @@ THE SOFTWARE.
             $(this).data("clear-button", x);
             $(x).css({ "position": "absolute", "left": ($(this).position().right), "top": $(this).position().top, "margin": "3px 0px 0px -20px" });
             $(this).after(x);
-
-        }).unbind("blur").blur(function (e) {
+            //$(this));
+        })).unbind("clear-blur").bind("clear-blur", (function (e) {
             var x = $(this).data("clear-button");
             if (x) {
                 if ($(x).hasClass("over")) {
@@ -55,6 +56,12 @@ THE SOFTWARE.
                 $(this).removeData("clear-button");
                 $(x).remove();
             }
+        }));
+	// add private event to the focus/unfocus events as branches
+        $("input[type=text]").on("focus", function () {
+            $(this).trigger("clear-focus");
+        }).on("blur", function () {
+            $(this).trigger("clear-blur");
         });
     }
     window.enableInputClearOption = enableInputClearOption;
